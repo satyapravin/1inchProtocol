@@ -256,21 +256,21 @@ contract('OneSplit', function ([_, addr1]) {
             console.log('raw:', res.returnAmount.toString());
         });
         
-        it.only('should work with Mooniswap ETH => DAI', async function () {
-            const res = await this.split.getExpectedReturn(
-                '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // ETH
-                '0x6B175474E89094C44Da98b954EedeAC495271d0F', // DAI
-                '1000000000000000000', // 1.0
-                10,
-                DISABLE_ALL.add(MOONISWAP_ALL), // enable only Mooniswap
-            );
+        //it.only('should work with Mooniswap ETH => DAI', async function () {
+        //    const res = await this.split.getExpectedReturn(
+        //        '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // ETH
+        //        '0x6B175474E89094C44Da98b954EedeAC495271d0F', // DAI
+        //        '1000000000000000000', // 1.0
+        //        10,
+        //        DISABLE_ALL.add(MOONISWAP_ALL), // enable only Mooniswap
+        //    );
 
-            console.log('Swap: 1 ETH');
-            console.log('returnAmount:', res.returnAmount.toString() / 1e18 + ' DAI');
-            // console.log('distribution:', res.distribution.map(a => a.toString()));
-            // console.log('raw:', res.returnAmount.toString());
-            expect(res.returnAmount).to.be.bignumber.above('20999999969');
-        });
+        //    console.log('Swap: 1 ETH');
+        //    console.log('returnAmount:', res.returnAmount.toString() / 1e18 + ' DAI');
+        //    // console.log('distribution:', res.distribution.map(a => a.toString()));
+        //    // console.log('raw:', res.returnAmount.toString());
+        //    expect(res.returnAmount).to.be.bignumber.above('20999999969');
+        //});
 
     });
 });
